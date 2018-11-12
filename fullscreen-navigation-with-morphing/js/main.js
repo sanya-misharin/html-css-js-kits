@@ -27,25 +27,18 @@ openMenuAnimation
         offset: "0"
     });
 
-/* var menuToBottom = anime({
-    targets: "#navigation",
-    translateY: 0,
-    easing: "easeInOutQuad",
-    duration: 2000,
-    loop: false,
-    autoplay: false
-}); */
-
 function openMenu() {
+    openMenuAnimation.play();
     if (toggleNavBtn.classList.contains("open")) {
-        openMenuAnimation.play();
         openMenuAnimation.reverse();
         toggleNavBtn.classList.remove("open");
     } else {
-        openMenuAnimation.restart();
+        if (toggleNavBtn.classList.contains("__first")) {
+            openMenuAnimation.reverse();
+        }
         toggleNavBtn.classList.add("open");
     }
-    
+    toggleNavBtn.classList.add("__first");
 }
 
 $toggleNavBtn.addEventListener("click", openMenu);

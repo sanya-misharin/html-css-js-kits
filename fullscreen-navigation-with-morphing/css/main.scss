@@ -1,10 +1,16 @@
 $font-family-base: "Montserrat", sans-serif;
 $font-weight-base: 300;
 $font-size: 1.125em;
+$font-size: 1.125em;
+$color-ivory: #ffffea;
+$color-brown: #61210f;
+$color-big-foot-fit: #EA8C55;
 $line-height: 1.3;
 $container-padding: 0.9rem;
 
 body {
+    background-color: $color-brown;
+    color: $color-ivory;
     font-family: $font-family-base;
     font-weight: $font-weight-base;
     -webkit-font-smoothing: antialiased;
@@ -13,6 +19,11 @@ body {
     line-height: $line-height;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: $font-size * 2.7
 }
 
 .container {
@@ -63,6 +74,10 @@ body {
     top: 0;
     left: 0;
     pointer-events: none;
+    z-index: 100;
+    path {
+        fill: $color-big-foot-fit;
+    }
 }
 
 header {
@@ -72,11 +87,12 @@ header {
     left: 0;
     width: 100%;
     height: 4.4rem;
-    z-index: 100;
+    z-index: 1000;
     .toggle-navbar {
         all: unset;
         cursor: pointer;
         position: relative;
+        margin-right: 0.5rem;
         height: 2rem;
         width: 3rem;
         &.open {
@@ -89,10 +105,10 @@ header {
                     top: 0;
                 }
                 &:before {
-                    transform: rotate(-45deg) translate(-30%, 350%)
+                    transform: rotate(-45deg) translate(-30%, 350%);
                 }
                 &:after {
-                    transform: rotate(45deg) translate(30%, 350%)
+                    transform: rotate(45deg) translate(30%, 350%);
                 }
                 span {
                     display: none;
@@ -103,15 +119,15 @@ header {
             position: relative;
             width: 100%;
             height: 100%;
-            transition: cubic-bezier();
             &:before,
             &:after,
             span {
                 content: "";
                 position: absolute;
                 height: 0.25rem;
-                background-color: #000;
+                background-color: $color-ivory;
                 border-radius: 0.2rem;
+                transition: all 1.3s;
             }
             &:before {
                 left: 0;
@@ -134,26 +150,30 @@ header {
 }
 
 nav {
-    /* background-color: #fbed46; */
     position: fixed;
     top: -100vh;
     left: 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    z-index: 10;
+    z-index: 101;
     .navbar-nav {
         all: unset;
         display: flex;
-        flex-direction: column;
         .nav-item {
             all: unset;
-            margin-bottom: $container-padding;
+            margin-right: 3rem;
         }
         .nav-link {
-            color:black;
+            color: $color-brown;
             cursor: pointer;
+            font-size: 2em;
             font-weight: 600;
         }
     }
+}
+
+main {
+    height: 100vh;
+    position: relative;
 }
