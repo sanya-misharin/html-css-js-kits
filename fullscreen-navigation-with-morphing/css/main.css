@@ -76,7 +76,7 @@ h1 {
 }
 
 #morphSvg path {
-  fill: #EA8C55;
+  fill: #ea8c55;
 }
 
 header {
@@ -192,3 +192,35 @@ main {
   height: 100vh;
   position: relative;
 }
+
+@media (max-width: 992px) {
+  nav .navbar-nav {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  nav .navbar-nav .nav-item {
+    margin-bottom: 3rem;
+  }
+  nav .navbar-nav .nav-link {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  nav .navbar-nav {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  h1 {
+    font-size: 2.25em;
+  }
+}
+/*# sourceMappingURL=main.css.map */

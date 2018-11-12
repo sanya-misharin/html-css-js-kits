@@ -3,4 +3,4 @@
 My web development kits.
 
 Examples can be found on codepen.io:
-* fullscreen navigation with morphing https://codepen.io/sanya_misharin/pen/mQOREV
+* fullscreen navigation with wave morphing https://codepen.io/sanya_misharin/pen/mQOREV
