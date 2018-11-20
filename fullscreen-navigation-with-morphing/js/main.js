@@ -8,6 +8,32 @@ var openMenuAnimation = anime.timeline({
 });
 openMenuAnimation
     .add({
+        targets: ".menu-icon .line",
+        translateY: {
+            value: function(target) {
+                return target.getAttribute("data-y");
+            },
+            easing: "linear",
+            duration: 250,
+            easing: "easeInOutQuart"
+        },
+        rotate: {
+            value: function(target) {
+                return target.getAttribute("data-rotate");
+            },
+            easing: "linear",
+            duration: 250,
+            delay: 750,
+            easing: "easeInOutQuart"
+        },
+        opacity: {
+            value: function(target) {
+                return target.getAttribute("data-opacity");
+            },
+            delay: 750
+        }
+    })
+    .add({
         targets: ".morph",
         d: [
             {

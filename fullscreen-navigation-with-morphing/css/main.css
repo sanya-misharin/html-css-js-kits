@@ -102,61 +102,37 @@ header .toggle-navbar.open {
   height: 3rem;
 }
 
-header .toggle-navbar.open .menu-icon:before, header .toggle-navbar.open .menu-icon:after {
-  left: 0;
-  right: 0;
-  top: 0;
-}
-
-header .toggle-navbar.open .menu-icon:before {
-  -webkit-transform: rotate(-45deg) translate(-30%, 350%);
-          transform: rotate(-45deg) translate(-30%, 350%);
-}
-
-header .toggle-navbar.open .menu-icon:after {
-  -webkit-transform: rotate(45deg) translate(30%, 350%);
-          transform: rotate(45deg) translate(30%, 350%);
-}
-
-header .toggle-navbar.open .menu-icon span {
-  display: none;
-}
-
 header .toggle-navbar .menu-icon {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-header .toggle-navbar .menu-icon:before, header .toggle-navbar .menu-icon:after,
-header .toggle-navbar .menu-icon span {
+header .toggle-navbar .menu-icon .line {
   content: "";
   position: absolute;
+  left: 0;
+  right: 0;
   height: 0.25rem;
   background-color: #ffffea;
   border-radius: 0.2rem;
-  -webkit-transition: all 1.3s;
-  transition: all 1.3s;
 }
 
-header .toggle-navbar .menu-icon:before {
-  left: 0;
-  right: 0;
+header .toggle-navbar .menu-icon .top {
   top: 0;
 }
 
-header .toggle-navbar .menu-icon:after {
-  bottom: 0;
-  left: 0;
-  right: 25%;
-}
-
-header .toggle-navbar .menu-icon span {
+header .toggle-navbar .menu-icon .middle {
+  opacity: 1;
   top: 50%;
   left: 0;
-  right: 0;
+  right: 25%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+header .toggle-navbar .menu-icon .bottom {
+  bottom: 0;
 }
 
 nav {
@@ -223,4 +199,3 @@ main {
     font-size: 2.25em;
   }
 }
-/*# sourceMappingURL=main.css.map */
