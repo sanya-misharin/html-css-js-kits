@@ -94,12 +94,8 @@ header .toggle-navbar {
   cursor: pointer;
   position: relative;
   margin-right: 0.5rem;
-  height: 2rem;
-  width: 3rem;
-}
-
-header .toggle-navbar.open {
   height: 3rem;
+  width: 3rem;
 }
 
 header .toggle-navbar .menu-icon {
@@ -119,7 +115,7 @@ header .toggle-navbar .menu-icon .line {
 }
 
 header .toggle-navbar .menu-icon .top {
-  top: 0;
+  top: 15%;
 }
 
 header .toggle-navbar .menu-icon .middle {
@@ -132,7 +128,7 @@ header .toggle-navbar .menu-icon .middle {
 }
 
 header .toggle-navbar .menu-icon .bottom {
-  bottom: 0;
+  bottom: 15%;
 }
 
 nav {
