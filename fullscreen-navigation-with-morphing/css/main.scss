@@ -167,7 +167,7 @@ nav {
 }
 
 main {
-    height: 100vh;
+    height: calc(100vh - 8.8rem);
     position: relative;
     padding: 4.4rem 0;
 }
