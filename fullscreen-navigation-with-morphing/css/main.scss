@@ -36,6 +36,8 @@ h1 {
 }
 
 .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
     margin-left: -$container-padding;
@@ -50,15 +52,21 @@ h1 {
 }
 
 .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .align-items-center {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .justify-content-center {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .hidden {
@@ -75,10 +83,15 @@ h1 {
     top: 0;
     left: 0;
     pointer-events: none;
+    opacity: 0;
     z-index: 100;
     path {
         fill: $color-big-foot-fit;
     }
+}
+
+#morphSvg.visible {
+    opacity: 1;
 }
 
 header {
@@ -117,7 +130,8 @@ header {
                 top: 50%;
                 left: 0;
                 right: 25%;
-                transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                        transform: translateY(-50%);
             }
             .bottom {
                 bottom: 15%;
@@ -136,6 +150,8 @@ nav {
     z-index: 101;
     .navbar-nav {
         all: unset;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         .nav-item {
             all: unset;
@@ -159,8 +175,10 @@ main {
 @media (max-width: 992px) {
     nav {
         .navbar-nav {
-            justify-content: space-around;
-            flex-wrap: wrap;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             .nav-item {
                 margin-bottom: 3rem;
             }
@@ -174,8 +192,13 @@ main {
 @media (max-width: 480px) {
     nav {
         .navbar-nav {
-            align-items: flex-end;
-            flex-direction: column;
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: flex-end;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             width: 100%;
         }
     }

@@ -49,14 +49,14 @@ h1 {
 
 .align-items-center {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .justify-content-center {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .hidden {
@@ -73,11 +73,16 @@ h1 {
   top: 0;
   left: 0;
   pointer-events: none;
+  opacity: 0;
   z-index: 100;
 }
 
 #morphSvg path {
   fill: #ea8c55;
+}
+
+#morphSvg.visible {
+  opacity: 1;
 }
 
 header {
@@ -125,7 +130,7 @@ header .toggle-navbar .menu-icon .middle {
   left: 0;
   right: 25%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 header .toggle-navbar .menu-icon .bottom {
@@ -170,9 +175,9 @@ main {
 @media (max-width: 992px) {
   nav .navbar-nav {
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   nav .navbar-nav .nav-item {
     margin-bottom: 3rem;
@@ -185,12 +190,12 @@ main {
 @media (max-width: 480px) {
   nav .navbar-nav {
     -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     width: 100%;
   }
   h1 {

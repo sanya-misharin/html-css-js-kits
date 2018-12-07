@@ -4,7 +4,14 @@ var $overlay = document.getElementById("morphSvg");
 
 var openMenuAnimation = anime.timeline({
     loop: false,
-    autoplay: false
+    autoplay: false,
+    update: function(anim) {
+        if (anim.progress === 0) {
+            $overlay.classList.remove("visible");
+        } else {
+            $overlay.classList.add("visible");
+        }
+    }
 });
 openMenuAnimation
     .add({
@@ -42,14 +49,14 @@ openMenuAnimation
             }
         ],
         easing: "easeInOutQuad",
-        duration: 1800,
+        duration: 1000,
         offset: "0"
     })
     .add({
         targets: "#navigation",
         translateY: "100%",
         easing: "easeInOutQuad",
-        duration: 1800,
+        duration: 1000,
         offset: "0"
     });
 
@@ -59,12 +66,12 @@ function openMenu() {
         openMenuAnimation.reverse();
         toggleNavBtn.classList.remove("open");
     } else {
-        if (toggleNavBtn.classList.contains("__first")) {
+        if (toggleNavBtn.classList.contains("first")) {
             openMenuAnimation.reverse();
         }
         toggleNavBtn.classList.add("open");
     }
-    toggleNavBtn.classList.add("__first");
+    toggleNavBtn.classList.add("first");
 }
 
 $toggleNavBtn.addEventListener("click", openMenu);
